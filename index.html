@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марк Богадевич | 3D дизайнер</title>
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Анимации AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Переключатель тем -->
+    <div class="theme-switcher">
+        <div class="theme-dot theme-dark active" data-theme="dark" title="Чёрная тема"></div>
+        <div class="theme-dot theme-light" data-theme="light" title="Белая тема"></div>
+        <div class="theme-dot theme-pink" data-theme="pink" title="Розовая тема"></div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ШАПКА -->
+    <header>
+        <div class="hero-image" style="background-image: url('images/introimage.jpg');"></div>
+        <div class="hero-content" data-aos="fade-down" data-aos-duration="1500">
+            <h1>Марк Богадевич</h1>
+            <p class="subtitle">3D дизайнер</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary"><i class="fas fa-eye"></i> Смотреть работы</a>
+                <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Связаться</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Листай вниз</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- ОБО МНЕ -->
+        <section id="about" class="container" data-aos="fade-up">
+            <h2>Обо мне</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Привет! Я Марк, 3D-дизайнер с опытом более 3 лет. Моя страсть — создавать модели для игр и визуализации в Blender. Особое внимание уделяю чистой геометрии и продуманным деталям, чтобы модели работали в реальных проектах.</p>
+                    <p>Я не только сам моделирую, но и обучаю этому других. Разработал собственную методику, которая позволяет новичкам быстро освоить Blender и начать создавать свои первые игровые модели. Помогаю с портфолио и подготовкой к работе в геймдеве.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Года опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="20">0</span>
+                            <span class="stat-label">Проектов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="10">0</span>
+                            <span class="stat-label">Учеников</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="3000">0</span>
+                            <span class="stat-label">Часов в Blender</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                    <img src="images/about.jpg" alt="Марк Богадевич">
+                </div>
+            </div>
+        </section>
+
+        <!-- КАРУСЕЛЬ ОТЗЫВОВ -->
+        <section id="testimonials" class="container" data-aos="fade-up">
+            <h2>Что говорят обо мне</h2>
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-card">
+                        <i class="fas fa-quote-right"></i>
+                        <p>«Марк сделал модель для моей игры — превзошёл ожидания. Быстро, качественно, учёл все пожелания. Рекомендую как специалиста, который понимает требования игровой индустрии.»</p>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <i class="fas fa-quote-right"></i>
+                        <p>«Благодарим за приятное сотрудничество и лояльность! Исполнитель был терпелив и учитывал все правки и комментарии от заказчика, работать было приятно. Все правки вносились быстро. Все вопросы оказались решаемы, в итоге пришли к хорошему результату. Надеемся на дальнейшее сотрудничество!»</p>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <i class="fas fa-quote-right"></i>
+                        <p>«Занятия с Марком помогли мне быстро освоить Blender именно для создания игровых моделей. Объясняет понятно, терпеливо и с практическими примерами. Отличный наставник!»</p>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <i class="fas fa-quote-right"></i>
+                        <p>«Марк подготовил для нашей студии несколько low-poly моделей под Unity. Работа выполнена идеально, геометрия чистая, текстуры аккуратные. Обязательно обратимся ещё.»</p>
+                    </div>
+                </div>
+                <!-- Пагинация (точки) -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- ПОРТФОЛИО -->
+        <section id="portfolio" class="container" data-aos="fade-up">
+            <h2>Избранные работы</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
+                    <a href="images/image1.jpg" data-fancybox="gallery" data-caption="">
+                        <img src="images/image1.jpg" alt="Работа 1" onerror="this.parentElement.parentElement.style.display='none'">
+                    </a>
+                </div>
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
+                    <a href="images/image2.jpg" data-fancybox="gallery" data-caption="">
+                        <img src="images/image2.jpg" alt="Работа 2" onerror="this.parentElement.parentElement.style.display='none'">
+                    </a>
+                </div>
+                <div class="portfolio-item wide" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+                    <a href="images/image3.jpg" data-fancybox="gallery" data-caption="">
+                        <img src="images/image3.jpg" alt="Работа 3" onerror="this.parentElement.parentElement.style.display='none'">
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://t.me/world3Dblender" target="_blank" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-telegram"></i> Все работы в Telegram
+                </a>
+            </div>
+            <p class="portfolio-note">* Кликни на картинку, чтобы увеличить</p>
+        </section>
+
+        <!-- МОЙ ПОДХОД К ОБУЧЕНИЮ -->
+        <section id="approach" class="container" data-aos="fade-up">
+            <h2>Обучение игровому 3D</h2>
+            <div class="approach-grid">
+                <div class="approach-card" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Авторские методички</h3>
+                    <p>Специально разработанные материалы для будущих геймдев-специалистов. Без воды — только то, что реально нужно в игровых проектах.</p>
+                </div>
+                <div class="approach-card" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Программа под твои цели: хочешь делать персонажей, окружение или оружие — строим обучение вокруг этого.</p>
+                </div>
+                <div class="approach-card" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Ключевые аспекты</h3>
+                    <p>Геометрия, UV, текстуры, освещение — всё, что нужно для создания качественных игровых моделей.</p>
+                </div>
+                <div class="approach-card" data-aos="flip-left" data-aos-delay="400">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Поддержка после курса</h3>
+                    <p>Помогаю с первыми проектами, разбираю ошибки, отвечаю на вопросы. Я заинтересован в твоём успехе.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- УСЛУГИ -->
+        <section id="services" class="container" data-aos="fade-up">
+            <h2>Чем я могу быть полезен</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="flip-right" data-aos-delay="100">
+                    <i class="fas fa-cube"></i>
+                    <h3>Модели для игр</h3>
+                    <p>Low-poly и high-poly модели, оптимизированные под Unity и Unreal Engine. Персонажи, окружение, пропсы.</p>
+                </div>
+                <div class="service-card" data-aos="flip-right" data-aos-delay="200">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Текстурирование</h3>
+                    <p>PBR-текстуры, создание материалов, UV-развертка. Всё для современных игровых движков.</p>
+                </div>
+                <div class="service-card" data-aos="flip-right" data-aos-delay="300">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Наставничество</h3>
+                    <p>Индивидуальные занятия по Blender 3D с уклоном в игровую разработку. Помощь в создании портфолио.</p>
+                </div>
+                <div class="service-card" data-aos="flip-right" data-aos-delay="400">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Консультации для студий</h3>
+                    <p>Помощь в настройке пайплайна, разборе моделей, оптимизации под движки. Аудит и доработка.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЦЕНЫ -->
+        <section id="pricing" class="container" data-aos="fade-up">
+            <h2>Цены</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Обучение</h3>
+                    <p class="price">от 1500 ₽</p>
+                    <p>Индивидуальные занятия по Blender 3D. Первое занятие — ознакомительное.</p>
+                </div>
+                <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-cube"></i>
+                    <h3>Разработка моделей</h3>
+                    <p class="price">по договорённости</p>
+                    <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
+                </div>
+            </div>
+            <p class="pricing-note">* Для точного расчёта свяжитесь со мной</p>
+        </section>
+
+        <!-- КОНТАКТЫ (интерактивные карточки) -->
+        <section id="contact" class="container" data-aos="fade-up">
+            <h2>Свяжись со мной</h2>
+            <div class="contact-cards">
+                <a href="https://t.me/LiLoRDon" target="_blank" class="contact-card" data-aos="flip-left" data-aos-delay="100">
+                    <i class="fab fa-telegram"></i>
+                    <span>@LiLoRDon</span>
+                    <p>Быстрый ответ в Telegram</p>
+                </a>
+                <a href="mailto:yt.mrcookie12@gmail.com" class="contact-card" data-aos="flip-left" data-aos-delay="200">
+                    <i class="fas fa-envelope"></i>
+                    <span>yt.mrcookie12@gmail.com</span>
+                    <p>Напиши письмо</p>
+                </a>
+                <a href="https://www.youtube.com/@lilordon2046" target="_blank" class="contact-card" data-aos="flip-left" data-aos-delay="300">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                    <p>Смотри уроки и процесс</p>
+                </a>
+            </div>
+            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
+                <h3>Или оставь сообщение здесь</h3>
+                <form action="https://formspree.io/f/xjgerggy" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                    <textarea name="message" placeholder="Опишите задачу..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-rocket"></i> Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Марк Богадевич. Все права защищены.</p>
+        <p class="footer-social">
+            <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@lilordon2046"><i class="fab fa-youtube"></i></a>
+        </p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+    </script>
+    <script>
+        // Инициализация Swiper (карусель отзывов)
+        const swiper = new Swiper('.testimonials-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+    </script>
+    <script>
+        // Скрытие карточек с отсутствующими изображениями
+        document.querySelectorAll('.portfolio-item img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.closest('.portfolio-item').style.display = 'none';
+            });
+        });
+    </script>
+    <script>
+        // Анимация счётчиков
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+                const updateNumber = () => {
+                    current += increment;
+                    if (current < target) {
+                        stat.innerText = Math.floor(current) + '+';
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        stat.innerText = target + '+';
+                    }
+                };
+                updateNumber();
+            });
+        }
+        const aboutSection = document.getElementById('about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(aboutSection);
+    </script>
+    <!-- Скрипт переключения тем -->
+    <script>
+        (function() {
+            const themeDots = document.querySelectorAll('.theme-dot');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            function setTheme(theme) {
+                document.body.classList.remove('theme-dark', 'theme-light', 'theme-pink');
+                document.body.classList.add(`theme-${theme}`);
+                localStorage.setItem('theme', theme);
+                
+                themeDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.dataset.theme === theme) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+            
+            themeDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    setTheme(dot.dataset.theme);
+                });
+            });
+            
+            setTheme(currentTheme);
+        })();
+    </script>
+    <!-- Скрипт для кнопки "Наверх" -->
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <!-- Инициализация Fancybox -->
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            backdrop: {
+                backgroundColor: 'rgba(0,0,0,0.3)'
+            },
+            showClass: 'fancybox-zoomIn',
+            hideClass: 'fancybox-zoomOut',
+            dragToClose: true,
+            Toolbar: {
+                display: {
+                    left: [],
+                    middle: [],
+                    right: ['close']
+                }
+            },
+            Thumbs: false,
+            Carousel: {
+                infinite: true
+            }
+        });
+    </script>
+</body>
+</html>
