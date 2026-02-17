@@ -568,7 +568,7 @@ header {
     line-height: 1.5;
 }
 
-/* ===== ЦЕНЫ (старые и новые) ===== */
+/* ===== ЦЕНЫ ===== */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -628,7 +628,7 @@ header {
     color: var(--text-muted);
 }
 
-/* Стили для раскрывающейся карточки курсов */
+/* ===== Стили для раскрывающейся карточки курсов ===== */
 .pricing-card.expandable {
     display: flex;
     flex-direction: column;
@@ -666,36 +666,63 @@ header {
     transform: rotate(90deg);
 }
 
-.courses-list {
-    display: flex;
-    flex-direction: column;
+/* ===== УЛУЧШЕННЫЙ ДИЗАЙН ДЛЯ КУРСОВ (мини-карточки) ===== */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
+    margin-top: 15px;
 }
 
-.course-item {
-    padding: 10px;
-    border-radius: 10px;
+.course-mini-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
-.course-item h4 {
-    font-size: 1.1rem;
+.course-mini-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-accent);
+    border-color: var(--accent-color);
+}
+
+.course-mini-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
     margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+
+.course-mini-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.course-mini-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--text-color);
+    margin: 0;
 }
 
-.course-desc {
-    font-size: 0.9rem;
+.course-mini-card p {
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    margin-bottom: 5px;
+    line-height: 1.4;
+    margin: 0;
 }
 
-.course-price {
+.course-mini-card .course-price {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
-    text-align: right;
-    font-size: 1rem;
+    margin-top: 5px;
 }
 
 /* ===== КОНТАКТЫ (интерактивные карточки) ===== */
