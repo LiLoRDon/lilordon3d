@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обучение 3D моделированию | Курсы по 3D моделированию | Марк Богадевич 3D</title>
+    <title>Марк Богадевич | 3D дизайнер</title>
     <!-- Фавиконка -->
     <link rel="icon" type="image/png" href="images/minilogo.png">
-    <!-- Предзагрузка шрифтов (опционально) -->
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -20,8 +20,141 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Наши стили -->
     <link rel="stylesheet" href="style.css">
+    <!-- Дополнительные стили для модальных окон -->
+    <style>
+        /* Затемнение фона */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 9998;
+            backdrop-filter: blur(5px);
+        }
+        /* Само модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px var(--shadow-color);
+            z-index: 9999;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+        }
+        .modal.active, .modal-overlay.active {
+            display: block;
+        }
+        .modal .close-btn {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+        .modal .close-btn:hover {
+            color: var(--accent-color);
+        }
+        .modal h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+        }
+        .modal h2 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: var(--text-color);
+        }
+        .modal p, .modal li {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .modal ul, .modal ol {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Затемнение фона для модалок -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Модальное окно для оферты -->
+    <div class="modal" id="ofertaModal">
+        <button class="close-btn" onclick="closeModal('oferta')">&times;</button>
+        <h1>Публичная оферта на обучение 3D-моделированию</h1>
+        <p style="text-align:right;">г. [Ваш город], 17.02.2026</p>
+        <h2>1. Общие положения</h2>
+        <p>1.1. Самозанятый Богадевич Марк [Отчество], ИНН 111301876547 (далее — Исполнитель), публикует настоящий договор (оферту) о возмездном оказании услуг по обучению 3D-моделированию.</p>
+        <p>1.2. Акцептом (принятием) оферты является полная или частичная оплата услуг Заказчиком. С момента оплаты договор считается заключённым (ст. 438 ГК РФ).</p>
+        <h2>2. Предмет договора</h2>
+        <p>2.1. Исполнитель обязуется провести обучение по выбранному Заказчиком курсу или провести индивидуальное занятие, информация о которых размещена на сайте https://lilordon3d.ru, а Заказчик — оплатить услугу.</p>
+        <h2>3. Стоимость и порядок оплаты</h2>
+        <p>3.1. Стоимость обучения указана на сайте.</p>
+        <p>3.2. Для курсов и программ оплата осуществляется 100% предоплатой на карту или через платёжные сервисы, указанные Исполнителем.</p>
+        <p>3.3. Для индивидуальных занятий оплата производится после проведения занятия по факту его оказания. В этом случае возврат не применяется, так как услуга уже оказана.</p>
+        <h2>4. Порядок оказания услуг</h2>
+        <p>4.1. После оплаты курса Заказчик получает доступ к обучающим материалам (видеоуроки, чат, обратная связь) в течение 24 часов. Доступ предоставляется через Telegram, закрытый канал или иным способом по выбору Исполнителя.</p>
+        <p>4.2. Моментом начала оказания услуги (фактического использования материала) считается:</p>
+        <ul>
+            <li>факт входа Заказчика в закрытый Telegram-канал / чат, где размещены материалы;</li>
+            <li>скачивание или просмотр любого видеоурока;</li>
+            <li>получение доступа к файлам курса;</li>
+            <li>проведение индивидуального занятия (онлайн-встречи).</li>
+        </ul>
+        <p>4.3. Срок доступа к материалам курса — 180 дней с момента оплаты, если иное не оговорено отдельно.</p>
+        <h2>5. Возврат денежных средств</h2>
+        <p>5.1. Заказчик вправе отказаться от исполнения договора до момента начала оказания услуг, оплатив Исполнителю фактически понесённые расходы.</p>
+        <p>5.2. <strong>Условия возврата:</strong></p>
+        <ul>
+            <li>Если Заказчик отказался от курса за 7 (семь) или более календарных дней до даты старта (для курсов с фиксированным стартом) или до момента предоставления доступа к материалам (для курсов в записи) — возврат производится в полном объёме.</li>
+            <li>Если отказ поступил менее чем за 7 дней до старта или после предоставления доступа к материалам, возврат производится за вычетом стоимости фактически понесённых расходов, включая комиссии платёжных систем и стоимость уже открытого доступа к платформе. Размер удержания может составлять до 100% стоимости, если доступ к материалам был предоставлен и Заказчик его активировал (вошёл в канал, скачал материалы, посмотрел уроки).</li>
+            <li>Если Заказчик начал пользоваться материалами (вошёл в закрытый канал, скачал или посмотрел хотя бы один урок) — услуга считается частично или полностью оказанной. В этом случае возврат денежных средств не производится, так как фактическое оказание услуги подтверждено действиями Заказчика.</li>
+            <li>Для индивидуальных занятий, оплачиваемых после проведения, возврат не применяется, так как услуга оказана в полном объёме.</li>
+        </ul>
+        <p>5.3. Для возврата средств Заказчик направляет письменное заявление на электронную почту yt.mrcookie12@gmail.com с указанием причины, даты оплаты, суммы и реквизитов для возврата. Возврат осуществляется в течение 10 рабочих дней с момента получения заявления.</p>
+        <h2>6. Ответственность</h2>
+        <p>6.1. Исполнитель не отвечает за невозможность обучения по вине Заказчика (отсутствие интернета, техники, личные обстоятельства и т.п.).</p>
+        <h2>7. Контакты и реквизиты</h2>
+        <p>Исполнитель: Богадевич Марк [Отчество], ИНН 111301876547, самозанятый.<br>
+        Email: yt.mrcookie12@gmail.com<br>
+        Telegram: @LiLoRDon</p>
+    </div>
+
+    <!-- Модальное окно для политики конфиденциальности -->
+    <div class="modal" id="privacyModal">
+        <button class="close-btn" onclick="closeModal('privacy')">&times;</button>
+        <h1>Политика конфиденциальности</h1>
+        <p style="text-align:right;">г. [Ваш город], 17.02.2026</p>
+        <h2>1. Общие положения</h2>
+        <p>1.1. Настоящая Политика определяет порядок обработки персональных данных пользователей сайта https://lilordon3d.ru (далее — Сайт) самозанятым Богадевичем Марком [Отчество], ИНН 111301876547 (далее — Оператор).</p>
+        <p>1.2. Используя Сайт, Пользователь выражает полное согласие с Политикой.</p>
+        <h2>2. Какие данные собираются</h2>
+        <p>2.1. Оператор обрабатывает: имя, email, номер телефона, Telegram ID, историю заказов, IP-адрес, данные cookies.</p>
+        <h2>3. Цели обработки</h2>
+        <p>3.1. Данные используются для: идентификации при заключении договора, связи с Пользователем, оказания услуг, улучшения работы Сайта.</p>
+        <h2>4. Правовые основания</h2>
+        <p>4.1. Обработка осуществляется на основании ст. 6 152-ФЗ «О персональных данных» и с согласия Пользователя (выражается при акцепте оферты).</p>
+        <h2>5. Передача данных третьим лицам</h2>
+        <p>5.1. Данные могут передаваться платёжным системам и хостинг-провайдерам исключительно для исполнения договора.</p>
+        <h2>6. Права Пользователя</h2>
+        <p>6.1. Пользователь вправе запросить полную информацию о своих данных, их уточнение или удаление, направив письмо на yt.mrcookie12@gmail.com.</p>
+        <h2>7. Контактная информация</h2>
+        <p>Оператор: Богадевич Марк [Отчество], ИНН 111301876547, самозанятый.<br>
+        Email: yt.mrcookie12@gmail.com<br>
+        Telegram: @LiLoRDon</p>
+    </div>
+
     <!-- Переключатель тем -->
     <div class="theme-switcher">
         <div class="theme-dot theme-dark active" data-theme="dark" title="Чёрная тема"></div>
@@ -121,7 +254,6 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
                     <a href="images/image1.jpg" data-fancybox="gallery" data-caption="">
-                        <!-- Добавлен loading="lazy" -->
                         <img src="images/image1.jpg" alt="Работа 1" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
@@ -218,7 +350,7 @@
                     <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
                 </div>
 
-                <!-- Карточка 3: Курсы и программы (улучшенный дизайн) -->
+                <!-- Карточка 3: Курсы и программы -->
                 <div class="pricing-card expandable" data-aos="flip-left" data-aos-delay="300">
                     <div class="pricing-header">
                         <i class="fas fa-book-open"></i>
@@ -304,10 +436,10 @@
 
     <footer>
         <p>© 2026 Марк Богадевич. Все права защищены.</p>
-        <!-- Добавлены ссылки на юридические страницы -->
+        <!-- Ссылки на модальные окна (без перезагрузки) -->
         <p>
-            <a href="oferta.html">Публичная оферта</a> | 
-            <a href="privacy.html">Политика конфиденциальности</a>
+            <a href="#" onclick="openModal('oferta'); return false;">Публичная оферта</a> | 
+            <a href="#" onclick="openModal('privacy'); return false;">Политика конфиденциальности</a>
         </p>
         <p class="footer-social">
             <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
@@ -333,13 +465,11 @@
         });
     </script>
     <script>
-        // Скрытие карточек с отсутствующими изображениями (уже есть)
         document.querySelectorAll('.portfolio-item img').forEach(img => {
             img.addEventListener('error', function() { this.closest('.portfolio-item').style.display = 'none'; });
         });
     </script>
     <script>
-        // Анимация счётчиков
         function animateNumbers() {
             const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
@@ -370,7 +500,6 @@
         observer.observe(aboutSection);
     </script>
     <script>
-        // Переключение тем
         (function() {
             const themeDots = document.querySelectorAll('.theme-dot');
             const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -388,7 +517,6 @@
         })();
     </script>
     <script>
-        // Кнопка "Наверх"
         const scrollToTopBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) scrollToTopBtn.classList.add('show');
@@ -397,7 +525,6 @@
         scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
     <script>
-        // Fancybox
         Fancybox.bind('[data-fancybox="gallery"]', {
             backdrop: { backgroundColor: 'rgba(0,0,0,0.3)' },
             showClass: 'fancybox-zoomIn',
@@ -425,6 +552,50 @@
             });
         });
     </script>
+
+    <!-- Скрипт для модальных окон -->
+    <script>
+        function openModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            const overlay = document.getElementById('modalOverlay');
+            if (modal && overlay) {
+                modal.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // запрещаем прокрутку фона
+            }
+        }
+
+        function closeModal(type) {
+            const modal = document.getElementById(type + 'Modal');
+            const overlay = document.getElementById('modalOverlay');
+            if (modal && overlay) {
+                modal.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = ''; // возвращаем прокрутку
+            }
+        }
+
+        // Закрытие по клику на затемнение
+        document.getElementById('modalOverlay').addEventListener('click', function() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (modal.classList.contains('active')) {
+                    const type = modal.id.replace('Modal', '');
+                    closeModal(type);
+                }
+            });
+        });
+
+        // Закрытие по клавише Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (modal.classList.contains('active')) {
+                        const type = modal.id.replace('Modal', '');
+                        closeModal(type);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
