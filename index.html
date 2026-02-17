@@ -6,7 +6,7 @@
     <title>Марк Богадевич | 3D дизайнер</title>
     <!-- Фавиконка -->
     <link rel="icon" type="image/png" href="images/minilogo.png">
-    <!-- Шрифты -->
+    <!-- Предзагрузка шрифтов (опционально) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -41,7 +41,6 @@
             <h1>Марк Богадевич</h1>
             <p class="subtitle">3D дизайнер</p>
             <div class="hero-buttons">
-                <!-- Добавлен класс smooth-scroll для обработки кликов -->
                 <a href="#portfolio" class="btn btn-primary smooth-scroll"><i class="fas fa-eye"></i> Смотреть работы</a>
                 <a href="#contact" class="btn btn-outline smooth-scroll"><i class="fas fa-paper-plane"></i> Связаться</a>
             </div>
@@ -122,17 +121,18 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
                     <a href="images/image1.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image1.jpg" alt="Работа 1" onerror="this.parentElement.parentElement.style.display='none'">
+                        <!-- Добавлен loading="lazy" -->
+                        <img src="images/image1.jpg" alt="Работа 1" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
                 <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
                     <a href="images/image2.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image2.jpg" alt="Работа 2" onerror="this.parentElement.parentElement.style.display='none'">
+                        <img src="images/image2.jpg" alt="Работа 2" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
                 <div class="portfolio-item wide" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
                     <a href="images/image3.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image3.jpg" alt="Работа 3" onerror="this.parentElement.parentElement.style.display='none'">
+                        <img src="images/image3.jpg" alt="Работа 3" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
             </div>
@@ -304,6 +304,11 @@
 
     <footer>
         <p>© 2026 Марк Богадевич. Все права защищены.</p>
+        <!-- Добавлены ссылки на юридические страницы -->
+        <p>
+            <a href="oferta.html">Публичная оферта</a> | 
+            <a href="privacy.html">Политика конфиденциальности</a>
+        </p>
         <p class="footer-social">
             <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
             <a href="https://www.youtube.com/@lilordon2046"><i class="fab fa-youtube"></i></a>
@@ -328,11 +333,13 @@
         });
     </script>
     <script>
+        // Скрытие карточек с отсутствующими изображениями (уже есть)
         document.querySelectorAll('.portfolio-item img').forEach(img => {
             img.addEventListener('error', function() { this.closest('.portfolio-item').style.display = 'none'; });
         });
     </script>
     <script>
+        // Анимация счётчиков
         function animateNumbers() {
             const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
@@ -363,6 +370,7 @@
         observer.observe(aboutSection);
     </script>
     <script>
+        // Переключение тем
         (function() {
             const themeDots = document.querySelectorAll('.theme-dot');
             const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -380,6 +388,7 @@
         })();
     </script>
     <script>
+        // Кнопка "Наверх"
         const scrollToTopBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) scrollToTopBtn.classList.add('show');
@@ -388,6 +397,7 @@
         scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
     <script>
+        // Fancybox
         Fancybox.bind('[data-fancybox="gallery"]', {
             backdrop: { backgroundColor: 'rgba(0,0,0,0.3)' },
             showClass: 'fancybox-zoomIn',
@@ -399,22 +409,15 @@
         });
     </script>
 
-    <!-- Новый скрипт для плавной прокрутки без якорей в адресной строке -->
+    <!-- Скрипт для плавной прокрутки без якорей -->
     <script>
         document.querySelectorAll('.smooth-scroll').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault(); // Отменяем стандартный переход с якорем
-                
-                const targetId = this.getAttribute('href'); // Получаем "#portfolio" или "#contact"
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Убираем якорь из адресной строки (если он там был)
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     if (history.pushState) {
                         history.pushState(null, null, ' ');
                     }
