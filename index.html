@@ -197,11 +197,11 @@
             </div>
         </section>
 
-        <!-- ЦЕНЫ (две старые карточки + одна раскрывающаяся со всеми курсами) -->
+        <!-- ЦЕНЫ -->
         <section id="pricing" class="container" data-aos="fade-up">
             <h2>Цены</h2>
             <div class="pricing-grid">
-                <!-- Карточка 1: Обучение (старая) -->
+                <!-- Карточка 1: Обучение -->
                 <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Обучение</h3>
@@ -209,7 +209,7 @@
                     <p>Индивидуальные занятия по Blender 3D. Первое занятие — ознакомительное.</p>
                 </div>
 
-                <!-- Карточка 2: Разработка моделей (старая) -->
+                <!-- Карточка 2: Разработка моделей -->
                 <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
                     <i class="fas fa-cube"></i>
                     <h3>Разработка моделей</h3>
@@ -217,7 +217,7 @@
                     <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
                 </div>
 
-                <!-- Карточка 3: Курсы и программы (новая, раскрывающаяся) -->
+                <!-- Карточка 3: Курсы и программы (улучшенный дизайн) -->
                 <div class="pricing-card expandable" data-aos="flip-left" data-aos-delay="300">
                     <div class="pricing-header">
                         <i class="fas fa-book-open"></i>
@@ -226,36 +226,41 @@
                     </div>
                     <details class="pricing-details">
                         <summary>Посмотреть все курсы</summary>
-                        <div class="courses-list">
+                        <div class="courses-grid">
                             <!-- Курс 1: Старт в 3D -->
-                            <div class="course-item">
-                                <h4>Старт в 3D: Базовый курс</h4>
-                                <p class="course-desc">Для тех, кто хочет системно войти в мир 3D, разобраться в Blender и создать первые модели.</p>
-                                <p class="course-price">5 900 ₽</p>
+                            <div class="course-mini-card">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Старт в 3D</h4>
+                                <p>Базовый курс для новичков: интерфейс, простые модели, первые проекты.</p>
+                                <span class="course-price">5 900 ₽</span>
                             </div>
                             <!-- Курс 2: Geometry Starter -->
-                            <div class="course-item">
+                            <div class="course-mini-card">
+                                <i class="fas fa-cubes"></i>
                                 <h4>Geometry Starter</h4>
-                                <p class="course-desc">Основы моделирования: интерфейс, инструменты, модификаторы, создание сложных форм.</p>
-                                <p class="course-price">3 900 ₽</p>
+                                <p>Основы моделирования: модификаторы, топология, создание сложных форм.</p>
+                                <span class="course-price">3 900 ₽</span>
                             </div>
                             <!-- Курс 3: Material Magic -->
-                            <div class="course-item">
+                            <div class="course-mini-card">
+                                <i class="fas fa-paint-brush"></i>
                                 <h4>Material Magic</h4>
-                                <p class="course-desc">Магия текстур и материалов: UV, PBR, ноды, создание реалистичных поверхностей.</p>
-                                <p class="course-price">4 900 ₽</p>
+                                <p>Магия текстур: UV, PBR, ноды, создание реалистичных материалов.</p>
+                                <span class="course-price">4 900 ₽</span>
                             </div>
                             <!-- Курс 4: Динамика и эффекты -->
-                            <div class="course-item">
+                            <div class="course-mini-card">
+                                <i class="fas fa-bolt"></i>
                                 <h4>Динамика и эффекты</h4>
-                                <p class="course-desc">Симуляция физики: твёрдые и мягкие тела, жидкости, ткани, частицы.</p>
-                                <p class="course-price">5 900 ₽</p>
+                                <p>Симуляция физики: твёрдые/мягкие тела, жидкости, ткани, частицы.</p>
+                                <span class="course-price">5 900 ₽</span>
                             </div>
                             <!-- Курс 5: Game-Ready -->
-                            <div class="course-item">
+                            <div class="course-mini-card">
+                                <i class="fas fa-gamepad"></i>
                                 <h4>Game-Ready</h4>
-                                <p class="course-desc">Полный цикл создания моделей для игр: high-poly, ретопология, запекание, экспорт в движки.</p>
-                                <p class="course-price">7 900 ₽</p>
+                                <p>Полный цикл для игр: high-poly, ретопология, запекание, экспорт в движки.</p>
+                                <span class="course-price">7 900 ₽</span>
                             </div>
                         </div>
                     </details>
@@ -264,7 +269,7 @@
             <p class="pricing-note">* Для точного расчёта или индивидуальной программы свяжитесь со мной.</p>
         </section>
 
-        <!-- КОНТАКТЫ (интерактивные карточки) -->
+        <!-- КОНТАКТЫ -->
         <section id="contact" class="container" data-aos="fade-up">
             <h2>Свяжись со мной</h2>
             <div class="contact-cards">
@@ -307,46 +312,26 @@
     <!-- Скрипты -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Fancybox JS -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script>
-        // Инициализация AOS
         AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
     </script>
     <script>
-        // Инициализация Swiper (карусель отзывов)
         const swiper = new Swiper('.testimonials-swiper', {
             loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
             slidesPerView: 1,
             spaceBetween: 20,
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
-            }
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
         });
     </script>
     <script>
-        // Скрытие карточек с отсутствующими изображениями
         document.querySelectorAll('.portfolio-item img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.closest('.portfolio-item').style.display = 'none';
-            });
+            img.addEventListener('error', function() { this.closest('.portfolio-item').style.display = 'none'; });
         });
     </script>
     <script>
-        // Анимация счётчиков
         function animateNumbers() {
             const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
@@ -376,70 +361,40 @@
         }, { threshold: 0.5 });
         observer.observe(aboutSection);
     </script>
-    <!-- Скрипт переключения тем -->
     <script>
         (function() {
             const themeDots = document.querySelectorAll('.theme-dot');
             const currentTheme = localStorage.getItem('theme') || 'dark';
-            
             function setTheme(theme) {
                 document.body.classList.remove('theme-dark', 'theme-light', 'theme-pink');
                 document.body.classList.add(`theme-${theme}`);
                 localStorage.setItem('theme', theme);
-                
                 themeDots.forEach(dot => {
                     dot.classList.remove('active');
-                    if (dot.dataset.theme === theme) {
-                        dot.classList.add('active');
-                    }
+                    if (dot.dataset.theme === theme) dot.classList.add('active');
                 });
             }
-            
-            themeDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    setTheme(dot.dataset.theme);
-                });
-            });
-            
+            themeDots.forEach(dot => dot.addEventListener('click', () => setTheme(dot.dataset.theme)));
             setTheme(currentTheme);
         })();
     </script>
-    <!-- Скрипт для кнопки "Наверх" -->
     <script>
         const scrollToTopBtn = document.getElementById('scrollToTop');
-        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                scrollToTopBtn.classList.add('show');
-            } else {
-                scrollToTopBtn.classList.remove('show');
-            }
+            if (window.scrollY > 400) scrollToTopBtn.classList.add('show');
+            else scrollToTopBtn.classList.remove('show');
         });
-        
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
-    <!-- Инициализация Fancybox -->
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
-            backdrop: {
-                backgroundColor: 'rgba(0,0,0,0.3)'
-            },
+            backdrop: { backgroundColor: 'rgba(0,0,0,0.3)' },
             showClass: 'fancybox-zoomIn',
             hideClass: 'fancybox-zoomOut',
             dragToClose: true,
-            Toolbar: {
-                display: {
-                    left: [],
-                    middle: [],
-                    right: ['close']
-                }
-            },
+            Toolbar: { display: { left: [], middle: [], right: ['close'] } },
             Thumbs: false,
-            Carousel: {
-                infinite: true
-            }
+            Carousel: { infinite: true }
         });
     </script>
 </body>
