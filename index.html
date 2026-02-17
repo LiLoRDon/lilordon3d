@@ -41,8 +41,9 @@
             <h1>Марк Богадевич</h1>
             <p class="subtitle">3D дизайнер</p>
             <div class="hero-buttons">
-                <a href="#portfolio" class="btn btn-primary"><i class="fas fa-eye"></i> Смотреть работы</a>
-                <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Связаться</a>
+                <!-- Добавлен класс smooth-scroll для обработки кликов -->
+                <a href="#portfolio" class="btn btn-primary smooth-scroll"><i class="fas fa-eye"></i> Смотреть работы</a>
+                <a href="#contact" class="btn btn-outline smooth-scroll"><i class="fas fa-paper-plane"></i> Связаться</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -301,18 +302,13 @@
         </section>
     </main>
 
-   <footer>
-    <p>© 2026 Марк Богадевич. Все права защищены.</p>
-    <p>ИНН: 111301876547</p>
-    <p>
-        <a href="oferta.html">Публичная оферта</a> | 
-        <a href="privacy.html">Политика конфиденциальности</a>
-    </p>
-    <p class="footer-social">
-        <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.youtube.com/@lilordon2046"><i class="fab fa-youtube"></i></a>
-    </p>
-</footer>
+    <footer>
+        <p>© 2026 Марк Богадевич. Все права защищены.</p>
+        <p class="footer-social">
+            <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@lilordon2046"><i class="fab fa-youtube"></i></a>
+        </p>
+    </footer>
 
     <!-- Скрипты -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -400,6 +396,30 @@
             Toolbar: { display: { left: [], middle: [], right: ['close'] } },
             Thumbs: false,
             Carousel: { infinite: true }
+        });
+    </script>
+
+    <!-- Новый скрипт для плавной прокрутки без якорей в адресной строке -->
+    <script>
+        document.querySelectorAll('.smooth-scroll').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Отменяем стандартный переход с якорем
+                
+                const targetId = this.getAttribute('href'); // Получаем "#portfolio" или "#contact"
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Убираем якорь из адресной строки (если он там был)
+                    if (history.pushState) {
+                        history.pushState(null, null, ' ');
+                    }
+                }
+            });
         });
     </script>
 </body>
