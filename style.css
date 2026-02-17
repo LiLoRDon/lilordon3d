@@ -856,4 +856,66 @@ footer {
         width: 100%;
         text-align: center;
     }
+
+}
+/* ===== РАСКРЫВАЮЩИЕСЯ БЛОКИ (ДЛЯ ЦЕН) ===== */
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-header {
+    margin-bottom: 15px;
+}
+
+.pricing-details {
+    margin-top: 10px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 15px;
+    cursor: pointer;
+}
+
+.pricing-details summary {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.pricing-details summary::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s;
+}
+
+.pricing-details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.pricing-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.pricing-details li {
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--card-border);
+    color: var(--text-secondary);
+}
+
+.pricing-details li:last-child {
+    border-bottom: none;
+}
+
+.details-price {
+    margin-top: 10px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-align: right;
 }
