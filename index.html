@@ -197,106 +197,71 @@
             </div>
         </section>
 
-        <!-- ЦЕНЫ (с раскрывающимися блоками и оригинальными названиями) -->
+        <!-- ЦЕНЫ (две старые карточки + одна раскрывающаяся со всеми курсами) -->
         <section id="pricing" class="container" data-aos="fade-up">
-            <h2>Цены и курсы</h2>
+            <h2>Цены</h2>
             <div class="pricing-grid">
-                <!-- Карточка 1: Старт в 3D (базовый) -->
+                <!-- Карточка 1: Обучение (старая) -->
                 <div class="pricing-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="pricing-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Старт в 3D: Базовый курс</h3>
-                        <p class="price">от 1500 ₽</p>
-                    </div>
-                    <details class="pricing-details">
-                        <summary>Подробнее о курсе</summary>
-                        <ul>
-                            <li>✅ Доступ к видеоматериалам на 3 месяца</li>
-                            <li>✅ Чат с поддержкой</li>
-                            <li>✅ Домашние задания с проверкой</li>
-                            <li>✅ Итоговый проект</li>
-                        </ul>
-                        <p class="details-price">Полный курс — 5 900 ₽</p>
-                    </details>
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Обучение</h3>
+                    <p class="price">от 1500 ₽</p>
+                    <p>Индивидуальные занятия по Blender 3D. Первое занятие — ознакомительное.</p>
                 </div>
 
-                <!-- Карточка 2: Geometry Starter (основы моделирования) -->
+                <!-- Карточка 2: Разработка моделей (старая) -->
                 <div class="pricing-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="pricing-header">
-                        <i class="fas fa-cube"></i>
-                        <h3>Geometry Starter</h3>
-                        <p class="price">3 900 ₽</p>
-                    </div>
-                    <details class="pricing-details">
-                        <summary>Программа</summary>
-                        <ul>
-                            <li>✅ Интерфейс и базовые инструменты</li>
-                            <li>✅ Моделирование простых объектов</li>
-                            <li>✅ Модификаторы</li>
-                            <li>✅ Создание сложных форм</li>
-                            <li>✅ 10 часов практики</li>
-                        </ul>
-                    </details>
+                    <i class="fas fa-cube"></i>
+                    <h3>Разработка моделей</h3>
+                    <p class="price">по договорённости</p>
+                    <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
                 </div>
 
-                <!-- Карточка 3: Material Magic (текстуры и материалы) -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="300">
+                <!-- Карточка 3: Курсы и программы (новая, раскрывающаяся) -->
+                <div class="pricing-card expandable" data-aos="flip-left" data-aos-delay="300">
                     <div class="pricing-header">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Material Magic</h3>
-                        <p class="price">4 900 ₽</p>
+                        <i class="fas fa-book-open"></i>
+                        <h3>Курсы и программы</h3>
+                        <p class="price">от 3 900 ₽</p>
                     </div>
                     <details class="pricing-details">
-                        <summary>Программа</summary>
-                        <ul>
-                            <li>✅ UV-развертка</li>
-                            <li>✅ Создание PBR-материалов</li>
-                            <li>✅ Текстурная живопись</li>
-                            <li>✅ Работа с нодами</li>
-                            <li>✅ 12 часов практики</li>
-                        </ul>
-                    </details>
-                </div>
-
-                <!-- Карточка 4: Динамика и эффекты (симуляция физики) -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="400">
-                    <div class="pricing-header">
-                        <i class="fas fa-bolt"></i>
-                        <h3>Динамика и эффекты</h3>
-                        <p class="price">5 900 ₽</p>
-                    </div>
-                    <details class="pricing-details">
-                        <summary>Программа</summary>
-                        <ul>
-                            <li>✅ Твёрдые тела</li>
-                            <li>✅ Мягкие тела и ткани</li>
-                            <li>✅ Жидкости (FLIP)</li>
-                            <li>✅ Частицы</li>
-                            <li>✅ 15 часов практики</li>
-                        </ul>
-                    </details>
-                </div>
-
-                <!-- Карточка 5: Game-Ready (модели для игр) -->
-                <div class="pricing-card" data-aos="flip-left" data-aos-delay="500">
-                    <div class="pricing-header">
-                        <i class="fas fa-gamepad"></i>
-                        <h3>Game-Ready</h3>
-                        <p class="price">7 900 ₽</p>
-                    </div>
-                    <details class="pricing-details">
-                        <summary>Программа</summary>
-                        <ul>
-                            <li>✅ High-poly моделирование</li>
-                            <li>✅ Ретопология</li>
-                            <li>✅ Запекание карт</li>
-                            <li>✅ Экспорт в Unity/Unreal</li>
-                            <li>✅ 20 часов практики</li>
-                        </ul>
+                        <summary>Посмотреть все курсы</summary>
+                        <div class="courses-list">
+                            <!-- Курс 1: Старт в 3D -->
+                            <div class="course-item">
+                                <h4>Старт в 3D: Базовый курс</h4>
+                                <p class="course-desc">Для тех, кто хочет системно войти в мир 3D, разобраться в Blender и создать первые модели.</p>
+                                <p class="course-price">5 900 ₽</p>
+                            </div>
+                            <!-- Курс 2: Geometry Starter -->
+                            <div class="course-item">
+                                <h4>Geometry Starter</h4>
+                                <p class="course-desc">Основы моделирования: интерфейс, инструменты, модификаторы, создание сложных форм.</p>
+                                <p class="course-price">3 900 ₽</p>
+                            </div>
+                            <!-- Курс 3: Material Magic -->
+                            <div class="course-item">
+                                <h4>Material Magic</h4>
+                                <p class="course-desc">Магия текстур и материалов: UV, PBR, ноды, создание реалистичных поверхностей.</p>
+                                <p class="course-price">4 900 ₽</p>
+                            </div>
+                            <!-- Курс 4: Динамика и эффекты -->
+                            <div class="course-item">
+                                <h4>Динамика и эффекты</h4>
+                                <p class="course-desc">Симуляция физики: твёрдые и мягкие тела, жидкости, ткани, частицы.</p>
+                                <p class="course-price">5 900 ₽</p>
+                            </div>
+                            <!-- Курс 5: Game-Ready -->
+                            <div class="course-item">
+                                <h4>Game-Ready</h4>
+                                <p class="course-desc">Полный цикл создания моделей для игр: high-poly, ретопология, запекание, экспорт в движки.</p>
+                                <p class="course-price">7 900 ₽</p>
+                            </div>
+                        </div>
                     </details>
                 </div>
             </div>
-            <p class="pricing-note">* Возможна оплата частями. Для индивидуальных условий свяжитесь со мной.</p>
+            <p class="pricing-note">* Для точного расчёта или индивидуальной программы свяжитесь со мной.</p>
         </section>
 
         <!-- КОНТАКТЫ (интерактивные карточки) -->
