@@ -725,6 +725,41 @@ header {
     margin-top: 5px;
 }
 
+/* ===== Временная недоступность ===== */
+.pricing-card.temporarily-unavailable {
+    opacity: 0.6;                /* делает блок полупрозрачным */
+    pointer-events: none;        /* отключает клики по всей карточке */
+    position: relative;
+    cursor: not-allowed;
+}
+
+.pricing-card.temporarily-unavailable .coming-soon {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--btn-primary-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Дополнительный визуальный эффект (можно убрать, если не нравится) */
+.pricing-card.temporarily-unavailable::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
 /* ===== КОНТАКТЫ (интерактивные карточки) ===== */
 .contact-cards {
     display: grid;
