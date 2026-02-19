@@ -83,6 +83,11 @@
             padding-left: 25px;
             margin: 10px 0;
         }
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            margin-left: 10px;
+        }
     </style>
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -166,6 +171,45 @@
         <p>Оператор: Богадевич Марк Сергеевич, ИНН 111301876547, самозанятый.<br>
         Email: yt.mrcookie12@gmail.com<br>
         Telegram: @LiLoRDon</p>
+    </div>
+
+    <!-- Модальное окно для курса Старт в 3D (обновлённое) -->
+    <div class="modal" id="courseStartModal">
+        <button class="close-btn" onclick="closeModal('courseStart')">&times;</button>
+        <h1>Старт в 3D: Базовый курс</h1>
+        <p style="font-style: italic; margin-bottom: 20px;">Полное погружение в мир трёхмерной графики с нуля. После курса вы создадите законченную 3D-модель для портфолио.</p>
+
+        <h2>Программа курса</h2>
+        <ul>
+            <li><strong>Урок 1.</strong> Знакомство с курсом: что ждём на данном курсе, знакомство с ведущим.</li>
+            <li><strong>Урок 2.</strong> Знакомство с интерфейсом программы, основные кнопки, перемещение, основные понятия.</li>
+            <li><strong>Урок 3.</strong> Первая работа с объектами, знакомство с понятиями примитивов, режим редактирования.</li>
+            <li><strong>Урок 4.</strong> Модификаторы Bevel, Subdivision Surface и Mirror (подробнее в курсе «Углубление в 3D»).</li>
+            <li><strong>Урок 5.</strong> Частые ошибки начинающих и как их избежать.</li>
+            <li><strong>Урок 6.</strong> Начало работы над проектом: подбор референсов, блокинг.</li>
+            <li><strong>Урок 7.</strong> Моделирование составляющих сцены.</li>
+            <li><strong>Урок 8.</strong> Детализация модели.</li>
+            <li><strong>Урок 9.</strong> Текстурирование (основы, подробнее в курсе «Магия материалов»).</li>
+            <li><strong>Урок 10.</strong> Постановка света в сцене.</li>
+            <li><strong>Урок 11.</strong> Проверка проекта на ошибки.</li>
+            <li><strong>Урок 12.</strong> Настройки рендера, рендер, постобработка.</li>
+            <li><strong>Урок 13.</strong> Подведение итогов, обзор дальнейших курсов.</li>
+        </ul>
+
+        <h2>Формат обучения</h2>
+        <p>✅ Видеоуроки с пояснением. <br>
+        ✅ Доступ через закрытый Telegram канал. <br>
+		✅ Чат с поддержкой и общением учеников.<br>
+        ✅ Доступ к материалам без ограничений по времени.</p>
+
+        <h2>Результат</h2>
+        <p>Вы получите твёрдую базу: от установки Blender до создания законченной модели, которую можно добавить в портфолио. Поймёте основные принципы моделирования, работы с модификаторами, освещением и рендером.</p>
+
+        <p style="margin-top: 30px; font-size: 1.5rem; font-weight: 700;">
+            <span style="color: var(--accent-color);">4 999 ₽</span>
+            <span class="old-price">9 999 ₽</span>
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Доступ сразу после оплаты.</p>
     </div>
 
     <!-- Переключатель тем -->
@@ -291,7 +335,7 @@
 
         <!-- МОЙ ПОДХОД К ОБУЧЕНИЮ -->
         <section id="approach" class="container" data-aos="fade-up">
-            <h2>Обучение игровому 3D</h2>
+            <h2>Обучение 3D</h2>
             <div class="approach-grid">
                 <div class="approach-card" data-aos="flip-left" data-aos-delay="100">
                     <i class="fas fa-book-open"></i>
@@ -301,12 +345,12 @@
                 <div class="approach-card" data-aos="flip-left" data-aos-delay="200">
                     <i class="fas fa-user-graduate"></i>
                     <h3>Индивидуальный подход</h3>
-                    <p>Программа под твои цели: хочешь делать персонажей, окружение или оружие — строим обучение вокруг этого.</p>
+                    <p>Программа под твои цели — строим обучение вокруг этого.</p>
                 </div>
                 <div class="approach-card" data-aos="flip-left" data-aos-delay="300">
                     <i class="fas fa-cubes"></i>
                     <h3>Ключевые аспекты</h3>
-                    <p>Геометрия, UV, текстуры, освещение — всё, что нужно для создания качественных игровых моделей.</p>
+                    <p>Геометрия, UV, текстуры, освещение — всё, что нужно для создания качественных моделей.</p>
                 </div>
                 <div class="approach-card" data-aos="flip-left" data-aos-delay="400">
                     <i class="fas fa-rocket"></i>
@@ -363,52 +407,60 @@
                     <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
                 </div>
 
-                <!-- Карточка 3: Курсы и программы (временно недоступна) -->
-                <div class="pricing-card expandable temporarily-unavailable" data-aos="flip-left" data-aos-delay="300">
+                <!-- Карточка 3: Курсы и программы (теперь активна) -->
+                <div class="pricing-card expandable" data-aos="flip-left" data-aos-delay="300">
                     <div class="pricing-header">
                         <i class="fas fa-book-open"></i>
                         <h3>Курсы и программы</h3>
                         <p class="price">от 4 999 ₽</p>
-                        <!-- Индикатор временной недоступности -->
-                        <span class="coming-soon">Скоро</span>
+                        <!-- Индикатор активных предложений -->
+                        <span class="special-offer">Старт продаж</span>
                     </div>
                     <details class="pricing-details">
                         <summary>Посмотреть все курсы</summary>
                         <div class="courses-grid">
-                            <!-- Курс 1: Старт в 3D -->
-                            <div class="course-mini-card">
-                                <i class="fas fa-rocket"></i>
-                                <h4>Старт в 3D</h4>
-                                <p>Базовый курс для новичков: интерфейс, простые модели, первые проекты.</p>
-                                <span class="course-price">4 999 ₽</span>
-                            </div>
-                            <!-- Курс 2: Углубление в 3D -->
-                            <div class="course-mini-card">
+                           <!-- Курс 1: Старт в 3D (активный, кликабельный) -->
+                           <div class="course-mini-card" onclick="openCourseModal('start')" style="cursor: pointer;">
+                           <i class="fas fa-rocket"></i>
+                           <h4>Старт в 3D</h4>
+                            <p>Базовый курс для новичков: интерфейс, простые модели, первые проекты.</p>
+                            <div class="price-wrapper">
+        <span class="course-price">4 999 ₽</span>
+        <span class="old-price">9 999 ₽</span>
+    </div>
+    <div class="more-info"><i class="fas fa-info-circle"></i> Узнать больше</div>
+</div>
+                            <!-- Курс 2: Углубление в 3D (в разработке) -->
+                            <div class="course-mini-card course-unavailable">
                                 <i class="fas fa-cubes"></i>
                                 <h4>Углубление в 3D</h4>
                                 <p>Модификаторы, топология, создание сложных форм.</p>
                                 <span class="course-price">6 999 ₽</span>
+                                <span class="course-badge">Скоро</span>
                             </div>
-                            <!-- Курс 3: Магия материалов -->
-                            <div class="course-mini-card">
+                            <!-- Курс 3: Магия материалов (в разработке) -->
+                            <div class="course-mini-card course-unavailable">
                                 <i class="fas fa-paint-brush"></i>
                                 <h4>Магия материалов</h4>
                                 <p>Магия текстур: UV, PBR, ноды, создание реалистичных материалов.</p>
                                 <span class="course-price">9 999 ₽</span>
+                                <span class="course-badge">Скоро</span>
                             </div>
-                            <!-- Курс 4: Динамика и эффекты -->
-                            <div class="course-mini-card">
+                            <!-- Курс 4: Динамика и эффекты (в разработке) -->
+                            <div class="course-mini-card course-unavailable">
                                 <i class="fas fa-bolt"></i>
                                 <h4>Динамика и эффекты</h4>
                                 <p>Симуляция физики: твёрдые/мягкие тела, жидкости, ткани, частицы.</p>
                                 <span class="course-price">9 999 ₽</span>
+                                <span class="course-badge">Скоро</span>
                             </div>
-                            <!-- Курс 5: Game-Ready -->
-                            <div class="course-mini-card">
+                            <!-- Курс 5: Game-Ready (в разработке) -->
+                            <div class="course-mini-card course-unavailable">
                                 <i class="fas fa-gamepad"></i>
                                 <h4>Game-Ready</h4>
                                 <p>Полный цикл для игр: high-poly, ретопология, запекание, экспорт в движки.</p>
                                 <span class="course-price">12 999 ₽</span>
+                                <span class="course-badge">Скоро</span>
                             </div>
                         </div>
                     </details>
@@ -417,7 +469,7 @@
             <p class="pricing-note">* Для точного расчёта или индивидуальной программы свяжитесь со мной.</p>
         </section>
 
-        <!-- ПОЧЕМУ ТАКИЕ ЦЕНЫ? (исправленный блок) -->
+        <!-- ПОЧЕМУ ТАКИЕ ЦЕНЫ? -->
         <section id="why-prices" class="container" data-aos="fade-up">
             <h2>Почему такие приятные цены?</h2>
             <div class="why-grid">
@@ -590,7 +642,7 @@
         });
     </script>
 
-    <!-- Скрипт для модальных окон -->
+    <!-- Скрипт для модальных окон (общий) -->
     <script>
         function openModal(type) {
             const modal = document.getElementById(type + 'Modal');
@@ -598,7 +650,7 @@
             if (modal && overlay) {
                 modal.classList.add('active');
                 overlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // запрещаем прокрутку фона
+                document.body.style.overflow = 'hidden';
             }
         }
 
@@ -608,7 +660,7 @@
             if (modal && overlay) {
                 modal.classList.remove('active');
                 overlay.classList.remove('active');
-                document.body.style.overflow = ''; // возвращаем прокрутку
+                document.body.style.overflow = '';
             }
         }
 
@@ -633,6 +685,11 @@
                 });
             }
         });
+
+        // Функция для открытия модального окна курса
+        function openCourseModal(courseId) {
+            openModal('courseStart');
+        }
     </script>
 </body>
 </html>
