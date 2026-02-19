@@ -173,7 +173,7 @@
         Telegram: @LiLoRDon</p>
     </div>
 
-    <!-- Модальное окно для курса Старт в 3D (обновлённое) -->
+    <!-- Модальное окно для курса Старт в 3D -->
     <div class="modal" id="courseStartModal">
         <button class="close-btn" onclick="closeModal('courseStart')">&times;</button>
         <h1>Старт в 3D: Базовый курс</h1>
@@ -559,36 +559,58 @@
             img.addEventListener('error', function() { this.closest('.portfolio-item').style.display = 'none'; });
         });
     </script>
+
+    <!-- УЛУЧШЕННАЯ АНИМАЦИЯ СЧЁТЧИКОВ (работает на всех устройствах) -->
     <script>
-        function animateNumbers() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-target'));
-                let current = 0;
-                const increment = target / 50;
-                const updateNumber = () => {
-                    current += increment;
-                    if (current < target) {
-                        stat.innerText = Math.floor(current) + '+';
-                        requestAnimationFrame(updateNumber);
-                    } else {
-                        stat.innerText = target + '+';
+        (function() {
+            const aboutSection = document.getElementById('about');
+            if (!aboutSection) return;
+
+            let animated = false; // флаг, что анимация уже выполнена
+
+            function animateNumbers() {
+                if (animated) return;
+                animated = true;
+
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    if (isNaN(target)) return; // пропускаем, если нет data-target
+
+                    let current = 0;
+                    const increment = Math.ceil(target / 50); // чтобы за 50 кадров
+                    const updateNumber = () => {
+                        current += increment;
+                        if (current < target) {
+                            stat.innerText = Math.floor(current) + '+';
+                            requestAnimationFrame(updateNumber);
+                        } else {
+                            stat.innerText = target + '+';
+                        }
+                    };
+                    updateNumber();
+                });
+            }
+
+            // Используем IntersectionObserver с низким порогом
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        observer.unobserve(entry.target); // отключаем после срабатывания
                     }
-                };
-                updateNumber();
-            });
-        }
-        const aboutSection = document.getElementById('about');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateNumbers();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        observer.observe(aboutSection);
+                });
+            }, { threshold: 0.2 }); // достаточно 20% видимости
+
+            observer.observe(aboutSection);
+
+            // Запасной вариант: если секция уже видна при загрузке
+            if (aboutSection.getBoundingClientRect().top < window.innerHeight) {
+                animateNumbers();
+            }
+        })();
     </script>
+
     <script>
         (function() {
             const themeDots = document.querySelectorAll('.theme-dot');
