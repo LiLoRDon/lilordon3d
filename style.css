@@ -685,9 +685,14 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    position: relative;
 }
 
-.course-mini-card:hover {
+.course-mini-card:not(.course-unavailable) {
+    cursor: pointer;
+}
+
+.course-mini-card:hover:not(.course-unavailable) {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--shadow-accent);
     border-color: var(--accent-color);
@@ -700,7 +705,7 @@ header {
     transition: transform 0.3s;
 }
 
-.course-mini-card:hover i {
+.course-mini-card:hover:not(.course-unavailable) i {
     transform: scale(1.1) rotate(5deg);
 }
 
@@ -725,15 +730,52 @@ header {
     margin-top: 5px;
 }
 
-/* ===== Временная недоступность ===== */
-.pricing-card.temporarily-unavailable {
-    opacity: 0.6;                /* делает блок полупрозрачным */
-    pointer-events: none;        /* отключает клики по всей карточке */
-    position: relative;
-    cursor: not-allowed;
+.price-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
-.pricing-card.temporarily-unavailable .coming-soon {
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.course-mini-card.course-unavailable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.course-mini-card.course-unavailable::after {
+    content: "В разработке";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: var(--accent-color);
+    color: var(--btn-primary-text);
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.course-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--btn-primary-text);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.special-offer {
     display: inline-block;
     background-color: var(--accent-color);
     color: var(--btn-primary-text);
@@ -746,18 +788,26 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* Дополнительный визуальный эффект (можно убрать, если не нравится) */
-.pricing-card.temporarily-unavailable::after {
-    content: '';
+/* ===== ИНДИКАТОР КЛИКАБЕЛЬНОСТИ ===== */
+.course-mini-card .click-indicator {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 20px;
-    z-index: 1;
-    pointer-events: none;
+    bottom: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: var(--btn-primary-text);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.course-mini-card:hover .click-indicator {
+    opacity: 1;
 }
 
 /* ===== ПОЧЕМУ ТАКИЕ ЦЕНЫ (улучшенная версия) ===== */
@@ -779,7 +829,6 @@ header {
     overflow: hidden;
 }
 
-/* Лёгкий градиент при наведении */
 .why-card::before {
     content: '';
     position: absolute;
@@ -1070,4 +1119,23 @@ footer {
         width: 100%;
         text-align: center;
     }
+}/* Стили для текстовой ссылки "Узнать больше" */
+.course-mini-card .more-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px dashed transparent;
+    transition: border-color 0.3s;
+}
+
+.course-mini-card:hover .more-info {
+    border-bottom-color: var(--accent-color);
+}
+
+.course-mini-card .more-info i {
+    font-size: 1rem;
 }
