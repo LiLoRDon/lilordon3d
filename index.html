@@ -4,114 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обучение 3D моделированию | Курсы по 3D моделированию | Марк Богадевич 3D</title>
+    <meta name="description" content="Курсы по 3D моделированию в Blender от Марка Богадевича. Обучение с нуля до уровня game-ready моделей. Индивидуальные занятия и авторские курсы. lilordon3d.ru">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="3D моделирование с Марком Богадевичем">
+    <meta property="og:description" content="Курсы по 3D моделированию в Blender — от нуля до игровых моделей. Авторская методика, поддержка после курса.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lilordon3d.ru">
+    <meta property="og:image" content="https://lilordon3d.ru/images/introimage.jpg">
+
     <!-- Фавиконка -->
     <link rel="icon" type="image/png" href="images/minilogo.png">
+
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <!-- Иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Анимации AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Наши стили -->
     <link rel="stylesheet" href="style.css">
-    <!-- Дополнительные стили для модальных окон -->
-    <style>
-        /* Затемнение фона */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 9998;
-            backdrop-filter: blur(5px);
-        }
-        /* Само модальное окно */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 900px;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px var(--shadow-color);
-            z-index: 9999;
-            border: 1px solid var(--card-border);
-            color: var(--text-secondary);
-        }
-        .modal.active, .modal-overlay.active {
-            display: block;
-        }
-        .modal .close-btn {
-            position: absolute;
-            top: 20px; right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text-muted);
-            transition: color 0.3s;
-            background: none;
-            border: none;
-        }
-        .modal .close-btn:hover {
-            color: var(--accent-color);
-        }
-        .modal h1 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--accent-color);
-        }
-        .modal h2 {
-            font-size: 1.3rem;
-            margin: 25px 0 15px;
-            color: var(--text-color);
-        }
-        .modal p, .modal li {
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-        .modal ul, .modal ol {
-            padding-left: 25px;
-            margin: 10px 0;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: var(--text-muted);
-            margin-left: 10px;
-        }
-    </style>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106882680', 'ym');
 
-    ym(106882680, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106882680" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106882680', 'ym');
+        ym(106882680, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106882680" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+
     <!-- Затемнение фона для модалок -->
     <div class="modal-overlay" id="modalOverlay"></div>
 
     <!-- Модальное окно для оферты -->
     <div class="modal" id="ofertaModal">
-        <button class="close-btn" onclick="closeModal('oferta')">&times;</button>
+        <button class="close-btn" onclick="closeModal('oferta')" aria-label="Закрыть">&times;</button>
         <h1>Публичная оферта на обучение 3D-моделированию</h1>
-        <p style="text-align:right;">17.02.2026</p>
+        <p class="modal-date">17.02.2026</p>
         <h2>1. Общие положения</h2>
         <p>1.1. Самозанятый Богадевич Марк Сергеевич, ИНН 111301876547 (далее — Исполнитель), публикует настоящий договор (оферту) о возмездном оказании услуг по обучению 3D-моделированию.</p>
         <p>1.2. Акцептом (принятием) оферты является полная или частичная оплата услуг Заказчиком. С момента оплаты договор считается заключённым (ст. 438 ГК РФ).</p>
@@ -136,8 +83,8 @@
         <p>5.2. <strong>Условия возврата:</strong></p>
         <ul>
             <li>Если Заказчик отказался от курса за 7 (семь) или более календарных дней до даты старта (для курсов с фиксированным стартом) или до момента предоставления доступа к материалам (для курсов в записи) — возврат производится в полном объёме.</li>
-            <li>Если отказ поступил менее чем за 7 дней до старта или после предоставления доступа к материалам, возврат производится за вычетом стоимости фактически понесённых расходов, включая комиссии платёжных систем и стоимость уже открытого доступа к платформе. Размер удержания может составлять до 100% стоимости, если доступ к материалам был предоставлен и Заказчик его активировал (вошёл в канал, скачал материалы, посмотрел уроки).</li>
-            <li>Если Заказчик начал пользоваться материалами (вошёл в закрытый канал, скачал или посмотрел хотя бы один урок) — услуга считается частично или полностью оказанной. В этом случае возврат денежных средств не производится, так как фактическое оказание услуги подтверждено действиями Заказчика.</li>
+            <li>Если отказ поступил менее чем за 7 дней до старта или после предоставления доступа к материалам, возврат производится за вычетом стоимости фактически понесённых расходов, включая комиссии платёжных систем и стоимость уже открытого доступа к платформе. Размер удержания может составлять до 100% стоимости, если доступ к материалам был предоставлен и Заказчик его активировал.</li>
+            <li>Если Заказчик начал пользоваться материалами (вошёл в закрытый канал, скачал или посмотрел хотя бы один урок) — услуга считается частично или полностью оказанной. В этом случае возврат денежных средств не производится.</li>
             <li>Для индивидуальных занятий, оплачиваемых после проведения, возврат не применяется, так как услуга оказана в полном объёме.</li>
         </ul>
         <p>5.3. Для возврата средств Заказчик направляет письменное заявление на электронную почту yt.mrcookie12@gmail.com с указанием причины, даты оплаты, суммы и реквизитов для возврата. Возврат осуществляется в течение 10 рабочих дней с момента получения заявления.</p>
@@ -151,9 +98,9 @@
 
     <!-- Модальное окно для политики конфиденциальности -->
     <div class="modal" id="privacyModal">
-        <button class="close-btn" onclick="closeModal('privacy')">&times;</button>
+        <button class="close-btn" onclick="closeModal('privacy')" aria-label="Закрыть">&times;</button>
         <h1>Политика конфиденциальности</h1>
-        <p style="text-align:right;">17.02.2026</p>
+        <p class="modal-date">17.02.2026</p>
         <h2>1. Общие положения</h2>
         <p>1.1. Настоящая Политика определяет порядок обработки персональных данных пользователей сайта https://lilordon3d.ru (далее — Сайт) самозанятым Богадевичем Марком Сергеевичем, ИНН 111301876547 (далее — Оператор).</p>
         <p>1.2. Используя Сайт, Пользователь выражает полное согласие с Политикой.</p>
@@ -175,9 +122,9 @@
 
     <!-- Модальное окно для курса Старт в 3D -->
     <div class="modal" id="courseStartModal">
-        <button class="close-btn" onclick="closeModal('courseStart')">&times;</button>
+        <button class="close-btn" onclick="closeModal('courseStart')" aria-label="Закрыть">&times;</button>
         <h1>Старт в 3D: Базовый курс</h1>
-        <p style="font-style: italic; margin-bottom: 20px;">Полное погружение в мир трёхмерной графики с нуля. После курса вы создадите законченную 3D-модель для портфолио.</p>
+        <p class="modal-subtitle">Полное погружение в мир трёхмерной графики с нуля. После курса вы создадите законченную 3D-модель для портфолио.</p>
 
         <h2>Программа курса</h2>
         <ul>
@@ -197,32 +144,50 @@
         </ul>
 
         <h2>Формат обучения</h2>
-        <p>✅ Видеоуроки с пояснением. <br>
-        ✅ Доступ через закрытый Telegram канал. <br>
+        <p>✅ Видеоуроки с пояснением.<br>
+        ✅ Доступ через закрытый Telegram канал.<br>
         ✅ Чат с поддержкой и общением учеников.<br>
         ✅ Доступ к материалам без ограничений по времени.</p>
 
         <h2>Результат</h2>
         <p>Вы получите твёрдую базу: от установки Blender до создания законченной модели, которую можно добавить в портфолио. Поймёте основные принципы моделирования, работы с модификаторами, освещением и рендером.</p>
 
-        <p style="margin-top: 30px; font-size: 1.5rem; font-weight: 700;">
-            <span style="color: var(--accent-color);">4 999 ₽</span>
+        <p class="modal-price-block">
+            <span class="modal-price-accent">4 999 ₽</span>
             <span class="old-price">9 999 ₽</span>
         </p>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">Доступ сразу после оплаты.</p>
+        <p class="modal-price-note">Доступ сразу после оплаты.</p>
     </div>
 
     <!-- Переключатель тем -->
-    <div class="theme-switcher">
-        <div class="theme-dot theme-dark active" data-theme="dark" title="Чёрная тема"></div>
-        <div class="theme-dot theme-light" data-theme="light" title="Белая тема"></div>
-        <div class="theme-dot theme-pink" data-theme="pink" title="Розовая тема"></div>
+    <div class="theme-switcher" role="group" aria-label="Выбор темы">
+        <div class="theme-dot theme-dark active" data-theme="dark" title="Чёрная тема" role="button" tabindex="0"></div>
+        <div class="theme-dot theme-light" data-theme="light" title="Белая тема" role="button" tabindex="0"></div>
+        <div class="theme-dot theme-pink" data-theme="pink" title="Розовая тема" role="button" tabindex="0"></div>
     </div>
 
     <!-- Кнопка "Наверх" -->
     <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo smooth-scroll">Марк Богадевич</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="smooth-scroll">Обо мне</a></li>
+                <li><a href="#portfolio" class="smooth-scroll">Работы</a></li>
+                <li><a href="#approach" class="smooth-scroll">Обучение</a></li>
+                <li><a href="#services" class="smooth-scroll">Услуги</a></li>
+                <li><a href="#pricing" class="smooth-scroll">Цены</a></li>
+                <li><a href="#contact" class="smooth-scroll nav-cta">Связаться</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- ШАПКА -->
     <header>
@@ -260,21 +225,17 @@
                             <span class="stat-label">Проектов</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-target="10">0</span>
-                            <span class="stat-label">Учеников</span>
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Учеников и клиентов</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number" data-target="3000">0</span>
                             <span class="stat-label">Часов в Blender</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-target="50">0</span>
-                            <span class="stat-label">Довольных клиентов</span>
-                        </div>
                     </div>
                 </div>
                 <div class="about-image" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                    <img src="images/about.jpg" alt="Марк Богадевич">
+                    <img src="images/about.jpg" alt="Марк Богадевич — 3D дизайнер" loading="lazy">
                 </div>
             </div>
         </section>
@@ -301,7 +262,6 @@
                         <p>«Марк подготовил для нашей студии несколько low-poly моделей под Unity. Работа выполнена идеально, геометрия чистая, текстуры аккуратные. Обязательно обратимся ещё.»</p>
                     </div>
                 </div>
-                <!-- Пагинация (точки) -->
                 <div class="swiper-pagination"></div>
             </div>
         </section>
@@ -312,22 +272,22 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="1000">
                     <a href="images/image1.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image1.jpg" alt="Работа 1" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+                        <img src="images/image1.jpg" alt="Работа 1 — 3D модель" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
                 <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000">
                     <a href="images/image2.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image2.jpg" alt="Работа 2" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+                        <img src="images/image2.jpg" alt="Работа 2 — 3D модель" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
                 <div class="portfolio-item wide" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
                     <a href="images/image3.jpg" data-fancybox="gallery" data-caption="">
-                        <img src="images/image3.jpg" alt="Работа 3" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+                        <img src="images/image3.jpg" alt="Работа 3 — 3D модель" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
                     </a>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://t.me/world3Dblender" target="_blank" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 10px;">
+            <div class="portfolio-all-btn-wrapper">
+                <a href="https://t.me/world3Dblender" target="_blank" class="btn btn-outline">
                     <i class="fab fa-telegram"></i> Все работы в Telegram
                 </a>
             </div>
@@ -408,20 +368,19 @@
                     <p>Стоимость зависит от сложности, сроков и объёма работы. Обсуждаем индивидуально.</p>
                 </div>
 
-                <!-- Карточка 3: Курсы и программы (теперь активна) -->
+                <!-- Карточка 3: Курсы и программы -->
                 <div class="pricing-card expandable" data-aos="flip-left" data-aos-delay="300">
                     <div class="pricing-header">
                         <i class="fas fa-book-open"></i>
                         <h3>Курсы и программы</h3>
                         <p class="price">от 4 999 ₽</p>
-                        <!-- Индикатор активных предложений -->
                         <span class="special-offer">Старт продаж</span>
                     </div>
                     <details class="pricing-details">
                         <summary>Посмотреть все курсы</summary>
                         <div class="courses-grid">
-                            <!-- Курс 1: Старт в 3D (активный, кликабельный) -->
-                            <div class="course-mini-card" onclick="openCourseModal('start')" style="cursor: pointer;">
+                            <!-- Курс 1: Старт в 3D (активный) -->
+                            <div class="course-mini-card" onclick="openCourseModal('start')">
                                 <i class="fas fa-rocket"></i>
                                 <h4>Старт в 3D</h4>
                                 <p>Базовый курс для новичков: интерфейс, простые модели, первые проекты.</p>
@@ -432,36 +391,40 @@
                                 <div class="more-info"><i class="fas fa-info-circle"></i> Узнать больше</div>
                             </div>
                             <!-- Курс 2: Углубление в 3D (в разработке) -->
-                            <div class="course-mini-card course-unavailable">
+                            <div class="course-mini-card course-unavailable-card">
                                 <i class="fas fa-cubes"></i>
                                 <h4>Углубление в 3D</h4>
                                 <p>Модификаторы, топология, создание сложных форм.</p>
                                 <span class="course-price">6 999 ₽</span>
                                 <span class="course-badge">Скоро</span>
+                                <a href="https://t.me/LiLoRDon?text=Хочу%20узнать%20о%20старте%20курса%20«Углубление%20в%203D»" target="_blank" class="notify-btn"><i class="fas fa-bell"></i> Уведомить о старте</a>
                             </div>
                             <!-- Курс 3: Магия материалов (в разработке) -->
-                            <div class="course-mini-card course-unavailable">
+                            <div class="course-mini-card course-unavailable-card">
                                 <i class="fas fa-paint-brush"></i>
                                 <h4>Магия материалов</h4>
                                 <p>Магия текстур: UV, PBR, ноды, создание реалистичных материалов.</p>
                                 <span class="course-price">9 999 ₽</span>
                                 <span class="course-badge">Скоро</span>
+                                <a href="https://t.me/LiLoRDon?text=Хочу%20узнать%20о%20старте%20курса%20«Магия%20материалов»" target="_blank" class="notify-btn"><i class="fas fa-bell"></i> Уведомить о старте</a>
                             </div>
                             <!-- Курс 4: Динамика и эффекты (в разработке) -->
-                            <div class="course-mini-card course-unavailable">
+                            <div class="course-mini-card course-unavailable-card">
                                 <i class="fas fa-bolt"></i>
                                 <h4>Динамика и эффекты</h4>
                                 <p>Симуляция физики: твёрдые/мягкие тела, жидкости, ткани, частицы.</p>
                                 <span class="course-price">9 999 ₽</span>
                                 <span class="course-badge">Скоро</span>
+                                <a href="https://t.me/LiLoRDon?text=Хочу%20узнать%20о%20старте%20курса%20«Динамика%20и%20эффекты»" target="_blank" class="notify-btn"><i class="fas fa-bell"></i> Уведомить о старте</a>
                             </div>
                             <!-- Курс 5: Game-Ready (в разработке) -->
-                            <div class="course-mini-card course-unavailable">
+                            <div class="course-mini-card course-unavailable-card">
                                 <i class="fas fa-gamepad"></i>
                                 <h4>Game-Ready</h4>
                                 <p>Полный цикл для игр: high-poly, ретопология, запекание, экспорт в движки.</p>
                                 <span class="course-price">12 999 ₽</span>
                                 <span class="course-badge">Скоро</span>
+                                <a href="https://t.me/LiLoRDon?text=Хочу%20узнать%20о%20старте%20курса%20«Game-Ready»" target="_blank" class="notify-btn"><i class="fas fa-bell"></i> Уведомить о старте</a>
                             </div>
                         </div>
                     </details>
@@ -512,13 +475,29 @@
                     <p>Смотри уроки и процесс</p>
                 </a>
             </div>
+
             <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
                 <h3>Или оставь сообщение здесь</h3>
-                <form action="https://formspree.io/f/xjgerggy" method="POST" class="contact-form">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="email" name="email" placeholder="Ваш email" required>
-                    <textarea name="message" placeholder="Опишите задачу..." rows="5" required></textarea>
+                <form id="contactForm" action="https://formspree.io/f/xjgerggy" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Ваше имя</label>
+                        <input type="text" id="contactName" name="name" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Ваш email</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="example@mail.ru" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Сообщение</label>
+                        <textarea id="contactMessage" name="message" placeholder="Опишите задачу..." rows="5" required></textarea>
+                    </div>
                     <button type="submit" class="btn btn-primary"><i class="fas fa-rocket"></i> Отправить</button>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i> Сообщение отправлено! Отвечу в ближайшее время.
+                    </div>
+                    <div class="form-error" id="formError">
+                        <i class="fas fa-times-circle"></i> Ошибка отправки. Попробуйте написать напрямую в Telegram.
+                    </div>
                 </form>
             </div>
         </section>
@@ -526,14 +505,13 @@
 
     <footer>
         <p>© 2026 Марк Богадевич. Все права защищены.</p>
-        <!-- Ссылки на модальные окна (без перезагрузки) -->
         <p>
-            <a href="#" onclick="openModal('oferta'); return false;">Публичная оферта</a> | 
+            <a href="#" onclick="openModal('oferta'); return false;">Публичная оферта</a> |
             <a href="#" onclick="openModal('privacy'); return false;">Политика конфиденциальности</a>
         </p>
         <p class="footer-social">
-            <a href="https://t.me/LiLoRDon"><i class="fab fa-telegram"></i></a>
-            <a href="https://www.youtube.com/@lilordon2046"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/LiLoRDon" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.youtube.com/@lilordon2046" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </p>
     </footer>
 
@@ -541,9 +519,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script>
         AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
     </script>
+
     <script>
         const swiper = new Swiper('.testimonials-swiper', {
             loop: true,
@@ -554,31 +534,21 @@
             breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
         });
     </script>
-    <script>
-        document.querySelectorAll('.portfolio-item img').forEach(img => {
-            img.addEventListener('error', function() { this.closest('.portfolio-item').style.display = 'none'; });
-        });
-    </script>
 
-    <!-- УЛУЧШЕННАЯ АНИМАЦИЯ СЧЁТЧИКОВ (работает на всех устройствах) -->
+    <!-- Анимация счётчиков -->
     <script>
         (function() {
             const aboutSection = document.getElementById('about');
             if (!aboutSection) return;
-
-            let animated = false; // флаг, что анимация уже выполнена
-
+            let animated = false;
             function animateNumbers() {
                 if (animated) return;
                 animated = true;
-
-                const statNumbers = document.querySelectorAll('.stat-number');
-                statNumbers.forEach(stat => {
+                document.querySelectorAll('.stat-number').forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-target'));
-                    if (isNaN(target)) return; // пропускаем, если нет data-target
-
+                    if (isNaN(target)) return;
                     let current = 0;
-                    const increment = Math.ceil(target / 50); // чтобы за 50 кадров
+                    const increment = Math.ceil(target / 50);
                     const updateNumber = () => {
                         current += increment;
                         if (current < target) {
@@ -591,51 +561,53 @@
                     updateNumber();
                 });
             }
-
-            // Используем IntersectionObserver с низким порогом
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         animateNumbers();
-                        observer.unobserve(entry.target); // отключаем после срабатывания
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.2 }); // достаточно 20% видимости
-
+            }, { threshold: 0.2 });
             observer.observe(aboutSection);
-
-            // Запасной вариант: если секция уже видна при загрузке
             if (aboutSection.getBoundingClientRect().top < window.innerHeight) {
                 animateNumbers();
             }
         })();
     </script>
 
+    <!-- Переключатель тем -->
     <script>
         (function() {
             const themeDots = document.querySelectorAll('.theme-dot');
             const currentTheme = localStorage.getItem('theme') || 'dark';
             function setTheme(theme) {
                 document.body.classList.remove('theme-dark', 'theme-light', 'theme-pink');
-                document.body.classList.add(`theme-${theme}`);
+                document.body.classList.add('theme-' + theme);
                 localStorage.setItem('theme', theme);
                 themeDots.forEach(dot => {
                     dot.classList.remove('active');
                     if (dot.dataset.theme === theme) dot.classList.add('active');
                 });
             }
-            themeDots.forEach(dot => dot.addEventListener('click', () => setTheme(dot.dataset.theme)));
+            themeDots.forEach(dot => {
+                dot.addEventListener('click', () => setTheme(dot.dataset.theme));
+                dot.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') setTheme(dot.dataset.theme); });
+            });
             setTheme(currentTheme);
         })();
     </script>
+
+    <!-- Кнопка "Наверх" -->
     <script>
         const scrollToTopBtn = document.getElementById('scrollToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) scrollToTopBtn.classList.add('show');
-            else scrollToTopBtn.classList.remove('show');
+            scrollToTopBtn.classList.toggle('show', window.scrollY > 400);
         });
         scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
+
+    <!-- Fancybox -->
     <script>
         Fancybox.bind('[data-fancybox="gallery"]', {
             backdrop: { backgroundColor: 'rgba(0,0,0,0.3)' },
@@ -648,24 +620,43 @@
         });
     </script>
 
-    <!-- Скрипт для плавной прокрутки без якорей -->
+    <!-- Плавная прокрутка -->
     <script>
         document.querySelectorAll('.smooth-scroll').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const targetElement = document.querySelector(href);
                 if (targetElement) {
+                    e.preventDefault();
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    if (history.pushState) {
-                        history.pushState(null, null, ' ');
-                    }
                 }
             });
         });
     </script>
 
-    <!-- Скрипт для модальных окон (общий) -->
+    <!-- Навигация: скрыть/показать при скролле + мобильное меню -->
+    <script>
+        (function() {
+            const nav = document.getElementById('siteNav');
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('nav-visible', window.scrollY > 80);
+            });
+
+            toggle.addEventListener('click', () => {
+                links.classList.toggle('nav-open');
+            });
+
+            links.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => links.classList.remove('nav-open'));
+            });
+        })();
+    </script>
+
+    <!-- Модальные окна -->
     <script>
         function openModal(type) {
             const modal = document.getElementById(type + 'Modal');
@@ -687,31 +678,60 @@
             }
         }
 
-        // Закрытие по клику на затемнение
+        function openCourseModal(course) {
+            const map = { start: 'courseStart' };
+            if (map[course]) openModal(map[course]);
+        }
+
         document.getElementById('modalOverlay').addEventListener('click', function() {
-            document.querySelectorAll('.modal').forEach(modal => {
-                if (modal.classList.contains('active')) {
-                    const type = modal.id.replace('Modal', '');
-                    closeModal(type);
-                }
+            document.querySelectorAll('.modal.active').forEach(modal => {
+                const type = modal.id.replace('Modal', '');
+                closeModal(type);
             });
         });
 
-        // Закрытие по клавише Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                document.querySelectorAll('.modal').forEach(modal => {
-                    if (modal.classList.contains('active')) {
-                        const type = modal.id.replace('Modal', '');
-                        closeModal(type);
-                    }
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    const type = modal.id.replace('Modal', '');
+                    closeModal(type);
                 });
             }
         });
+    </script>
 
-        // Функция для открытия модального окна курса
-        function openCourseModal(courseId) {
-            openModal('courseStart');
+    <!-- Форма обратной связи: обратная связь об отправке -->
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = contactForm.querySelector('button[type="submit"]');
+                const successEl = document.getElementById('formSuccess');
+                const errorEl = document.getElementById('formError');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                successEl.style.display = 'none';
+                errorEl.style.display = 'none';
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        successEl.style.display = 'flex';
+                        contactForm.reset();
+                    } else {
+                        errorEl.style.display = 'flex';
+                    }
+                } catch {
+                    errorEl.style.display = 'flex';
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-rocket"></i> Отправить';
+                }
+            });
         }
     </script>
 </body>
