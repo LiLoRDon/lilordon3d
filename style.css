@@ -1404,3 +1404,229 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== STICKY CTA БАННЕР ===== */
+.sticky-cta {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    z-index: 800;
+    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 20px 12px;
+    pointer-events: none;
+}
+
+.sticky-cta.sticky-cta-visible {
+    bottom: 0;
+    pointer-events: auto;
+}
+
+.sticky-cta-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 -4px 30px var(--shadow-accent);
+    backdrop-filter: blur(10px);
+}
+
+.sticky-cta-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sticky-cta-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sticky-cta-title i {
+    color: var(--accent-color);
+}
+
+.sticky-cta-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sticky-old-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.sticky-cta-timer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.sticky-cta-timer strong {
+    color: var(--accent-color);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+}
+
+.sticky-cta-btn {
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sticky-cta-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.sticky-cta-close:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .sticky-cta-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .sticky-cta-timer {
+        display: none;
+    }
+
+    .sticky-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===== СЕКЦИЯ "КАК ЭТО РАБОТАЕТ" ===== */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 20px;
+}
+
+.process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+    position: relative;
+}
+
+.process-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 0 0 6px var(--bg-color);
+}
+
+.process-step:hover .process-icon {
+    background: var(--accent-color);
+    color: var(--btn-primary-text);
+    box-shadow: 0 0 0 6px var(--bg-color), 0 0 20px var(--shadow-accent);
+    transform: scale(1.1);
+}
+
+.step-number {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--btn-primary-text);
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-connector {
+    position: absolute;
+    top: 39px;
+    left: calc(50% + 40px);
+    right: calc(-50% + 40px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--card-border));
+    z-index: 0;
+}
+
+.process-step:last-child .process-connector {
+    display: none;
+}
+
+.process-step h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+    }
+
+    .process-connector {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
